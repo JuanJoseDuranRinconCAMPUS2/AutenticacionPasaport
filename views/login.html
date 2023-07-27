@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso de usuario</title>
+</head>
+<body>
+    <div class="login-box">
+        <p>Login</p>
+        <form action = "/login" method = "POST">
+          <div class="user-box">
+            <input required="" name="Email" type="text">
+            <label>Email</label>
+          </div>
+          <div class="user-box">
+            <input required="" name="Password" type="password">
+            <label>Password</label>
+          </div>
+          <button><a>
+          
+              <span></span>
+              <span></span>
+              Submit
+          </a>
+        </button>
+        </form>
+        <br>
+        <br>
+            <button onclick="LOGIN()" class="discord">
+              <div class="svg-wrapper-1">
+                <div class="svg-wrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="40" height="40">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path fill="currentColor" d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"></path>
+                  </svg>
+                </div>
+              </div>
+              <span>Discord</span>
+            </button>
+            <script>
+              function LOGIN() {
+                  window.location.href = "/login";
+              }
+          </script>
+        <br>
+        <br>
+        <p>Don't have an account? <a href="" class="a2">Sign up!</a></p>
+      </div>
+
+      <style>
+        .login-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            padding: 40px;
+            margin: 20px auto;
+            transform: translate(-50%, -55%);
+            background: rgba(0,0,0,.9);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0,0,0,.6);
+            border-radius: 10px;
+          }
+          
+          .login-box p:first-child {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+          }
+          
+          .login-box .user-box {
+            position: relative;
+          }
+          
+          .login-box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+          }
+          
+          .login-box .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s;
+          }
+          
+          .login-box .user-box input:focus ~ label,
+          .login-box .user-box input:valid ~ label {
+            top: -20px;
+            left: 0;
+            color: #fff;
+            font-size: 12px;
+          }
+          
+          .login-box form a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            font-weight: bold;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 10px;
+            letter-spacing: 3px
+          }
+          
+          .login-box a:hover {
+            background: #fff;
+            color: #272727;
+            border-radius: 5px;
+          }
+          
+          .login-box a span {
+            position: absolute;
+            display: block;
+          }
+          
+          .login-box a span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #fff);
+            animation: btn-anim1 1.5s linear infinite;
+          }
+          
+          @keyframes btn-anim1 {
+            0% {
+              left: -100%;
+            }
+          
+            50%,100% {
+              left: 100%;
+            }
+          }
+          
+          .login-box a span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #fff);
+            animation: btn-anim2 1.5s linear infinite;
+            animation-delay: .375s
+          }
+          
+          @keyframes btn-anim2 {
+            0% {
+              top: -100%;
+            }
+          
+            50%,100% {
+              top: 100%;
+            }
+          }
+          
+          .login-box a span:nth-child(3) {
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, #fff);
+            animation: btn-anim3 1.5s linear infinite;
+            animation-delay: .75s
+          }
+          
+          @keyframes btn-anim3 {
+            0% {
+              right: -100%;
+            }
+          
+            50%,100% {
+              right: 100%;
+            }
+          }
+          
+          .login-box a span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #fff);
+            animation: btn-anim4 1.5s linear infinite;
+            animation-delay: 1.125s
+          }
+          
+          @keyframes btn-anim4 {
+            0% {
+              bottom: -100%;
+            }
+          
+            50%,100% {
+              bottom: 100%;
+            }
+          }
+          
+          .login-box p:last-child {
+            color: #aaa;
+            font-size: 14px;
+          }
+          
+          .login-box a.a2 {
+            color: #fff;
+            text-decoration: none;
+          }
+          
+          .login-box a.a2:hover {
+            background: transparent;
+            color: #aaa;
+            border-radius: 5px;
+          }
+          .discord {
+            font-family: inherit;
+            font-size: 18px;
+            background: linear-gradient(to bottom, #4f4dd9 0%,#2b60aa 100%);
+            color: white;
+            padding: 0.8em 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+          }
+          
+          .discord:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+          }
+          
+          .discord:active {
+            transform: scale(0.95);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+          }
+          
+          .discord span {
+            display: block;
+            margin-left: 0.4em;
+            transition: all 0.3s;
+          }
+          
+          .discord svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+            transition: all 0.3s;
+          }
+          
+          .discord .svg-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin-right: 0.5em;
+            transition: all 0.3s;
+          }
+          
+          .discord:hover .svg-wrapper {
+            background-color: rgba(255, 255, 255, 0.5);
+          }
+          
+          .discord:hover svg {
+            transform: rotate(360deg);
+          }
+          
+          /* credits to uiverse.io/profile/eirikvold */
+      </style>
+</body>
+</html>

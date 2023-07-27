@@ -1,5 +1,5 @@
 import passport from "passport";
-import { Strategy } from "passport-discord";
+import { Strategy as DiscordStrategy} from "passport-discord";
 import dotnev from 'dotenv';
 
 dotnev.config();
@@ -13,11 +13,11 @@ passport.deserializeUser((obj, done) => {
     done(null, obj)
 })
 console.log(keyDiscord.clientID);
-passport.use(new Strategy({
+passport.use(new DiscordStrategy({
     clientID : keyDiscord.clientID,
     clientSecret : keyDiscord.clientSecret,
     callbackURL : keyDiscord.callbackURL,
-    scope : ["identify"],
+    scope : ['identify', 'email', 'connections', 'guilds', 'guilds.join', 'gdm.join']
 }, (accestoken, refreshtoken, profile, cb) =>{
     process.nextTick(() => {
         return cb(null, profile)

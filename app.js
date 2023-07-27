@@ -3,6 +3,7 @@ import express from 'express';
 import session from 'express-session';
 import LoginS from './routes/login.js';
 import passport from './authentication/pasaport.js';
+import auth from "./validators/auth.js";
 console.clear();
 dotnev.config();
 
@@ -21,8 +22,11 @@ Api.use(passport.initialize());
 Api.use(passport.session());
 // Endpoints
 // ════════ ⋆★⋆ ════════
-Api.use("/login", passport.authenticate("discord", {failureRedirect : '/'}),LoginS);
-Api.use("/perfil", (req, res) =>{
+Api.use("/Ingreso", (req,res)=>{
+    res.sendFile('login.html', { root: './views' })
+})
+Api.use("/login", passport.authenticate("discord", {failureRedirect : '/', successRedirect : '/perfil'}),LoginS);
+Api.use("/perfil", auth,(req, res) =>{
     res.json({
         datos_Discord : req.user
     })
